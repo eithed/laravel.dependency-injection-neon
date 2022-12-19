@@ -1,0 +1,170 @@
+parameters:
+	disallowedFunctionCalls:
+		-
+			function: 'abort()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort(...) instead;'
+		-
+			function: 'abort_if()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort_if(...) instead;'
+		-
+			function: 'abort_unless()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort_unless(...);'
+		-
+			function: 'action()'
+			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator->url(); instead'
+		-
+			function: 'app()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application; instead'
+		-
+			function: 'app_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->path($path); instead'
+		-
+			function: 'asset()'
+			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator->asset($path, $secure); instead'
+		-
+			function: 'auth()'
+			message: 'dependency inject Illuminate\Contracts\Auth\Factory $authFactory and use $authFactory; instead'
+		-
+			function: 'auth()'
+			message: 'dependency inject Illuminate\Contracts\Auth\Factory $authFactory and use $authFactory->guard($guard); instead'
+		-
+			function: 'back()'
+			message: 'dependency inject Illuminate\Routing\Redirector $redirector and use $redirector->back($status, $headers, $fallback); instead'
+		-
+			function: 'base_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->basePath($path); instead'
+		-
+			function: 'bcrypt()'
+			message: 'dependency inject Illuminate\Contracts\Hashing\Hasher $hashManager and use $hashManager->driver("bcrypt")->make($value, $options); instead'
+		-
+			function: 'broadcast()'
+			message: 'dependency inject Illuminate\Contracts\Broadcasting\Factory $broadcastManager and use $broadcastManager->event($event); instead'
+		-
+			function: 'cache()'
+			message: 'dependency inject Illuminate\Contracts\Cache\Factory $cacheManager and use $cacheManager; instead'
+		-
+			function: 'config()'
+			message: 'dependency inject Illuminate\Contracts\Config\Repository $configRepository and use $configRepository; instead'
+		-
+			function: 'config_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->configPath($path); instead'
+		-
+			function: 'cookie()'
+			message: 'dependency inject Illuminate\Contracts\Cookie\Factory $cookieFactory and use $cookieFactory; instead'
+		-
+			function: 'csrf_field()'
+			message: 'Use new HtmlString(''<input type="hidden" name="_token" value="'' . $sessionManager->token() . ''">'') instead'
+		-
+			function: 'csrf_token()'
+			message: 'dependency injection Illuminate\Session\SessionManager $sessionManager and use $sessionManager->token(); instead'
+		-
+			function: 'database_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->databasePath($path); instead'
+		-
+			function: 'decrypt()'
+			message: 'dependency inject Illuminate\Contracts\Encryption\Encrypter $encrypter and use $encrypter->decrypt($value, $unserialize); instead'
+		-
+			function: 'dispatch()'
+			message: 'dependency inject Illuminate\Contracts\Bus\QueueingDispatcher $dispatcher and use $dispatcher->dispatch($job); instead'
+		-
+			function: 'dispatch_sync()'
+			message: 'dependency inject Illuminate\Contracts\Bus\QueueingDispatcher $dispatcher and use $dispatcher->dispatchSync($job); instead'
+		-
+			function: 'dispatch_now()'
+			message: 'dependency inject Illuminate\Contracts\Bus\QueueingDispatcher $dispatcher and use $dispatcher->dispatchNow($job); instead'
+		-
+			function: 'encrypt()'
+			message: 'dependency inject Illuminate\Contracts\Encryption\Encrypter $encrypter and use $encrypter->encrypt($value, $serialize); instead'
+		-
+			function: 'event()'
+			message: 'dependency inject Illuminate\Contracts\Events\Dispatcher $eventDispatcher and use $eventDispatcher->dispatch($job); instead'
+		-
+			function: 'fake()'
+			message: 'dependency inject \Faker\Generator $faker and use $faker instead'
+		-
+			function: 'info()'
+			message: 'dependency inject Psr\Log\LoggerInterface $logManager and use $logManager->info($message, $context); instead'
+		-
+			function: 'logger()'
+			message: 'dependency inject Psr\Log\LoggerInterface $logManager and use $logManager; instead'
+		-
+			function: 'logger()'
+			message: 'dependency inject Psr\Log\LoggerInterface $logManager and use $logManager->debug($message, $context); instead'
+		-
+			function: 'lang_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->langPath($path); instead'
+		-
+			function: 'logs()'
+			message: 'dependency inject Psr\Log\LoggerInterface $logManager and use $logManager instead'
+		-
+			function: 'logs()'
+			message: 'dependency inject Psr\Log\LoggerInterface $logManager and use $logManager->driver($driver) instead'
+		-
+			function: 'mix()'
+			message: 'use $mix(); instead'
+		-
+			function: 'old()'
+			message: 'dependency inject Illuminate\Http\Request $request and use $request->old($key, $default); instead'
+		-
+			function: 'policy()'
+			message: 'dependency inject Illuminate\Contracts\Auth\Access\Gate $gate and use $gate->getPolicyFor($class); instead'
+		-
+			function: 'public_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->publicPath($path); instead'
+		-
+			function: 'redirect()'
+			message: 'dependency inject Illuminate\Routing\Redirector $redirector and use $redirector; instead'
+		-
+			function: 'report()'
+			message: 'dependency inject Illuminate\Contracts\Debug\ExceptionHandler $exceptionHandler and use $exceptionHandler->report($exception); instead'
+		-
+			function: 'request()'
+			message: 'dependency inject Illuminate\Http\Request $request and use $request instead'
+		-
+			function: 'rescue()'
+			message: 'dependency inject Illuminate\Contracts\Debug\ExceptionHandler $exceptionHandler and use try { return $callback(); } catch (Throwable $e) { $exceptionHandler->report($e); return value($rescue, $e); } instead'
+		-
+			function: 'resolve()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->make($name, $parameters); instead'
+		-
+			function: 'resource_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->resourcePath($path); instead'
+		-
+			function: 'response()'
+			message: 'dependency inject Illuminate\Contracts\Routing\ResponseFactory $responseFactory and use $responseFactory; instead'
+		-
+			function: 'route()'
+			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator->route($name, $parameters, $absolute); instead'
+		-
+			function: 'secure_asset'
+			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator->asset($path, true); instead'
+		-
+			function: 'secure_url'
+			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator->url($path, $parameters, true); instead'
+		-
+			function: 'session()'
+			message: 'dependency injection Illuminate\Session\SessionManager $sessionManager and use $sessionManager instead'
+		-
+			function: 'storage_path()'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->storagePath($path); instead'
+		-
+			function: 'to_route()'
+			message: 'dependency inject Illuminate\Routing\Redirector $redirector and use $redirector->route($route, $parameters, $status, $headers); instead'
+		-
+			function: 'trans()'
+			message: 'dependency inject Illuminate\Contracts\Translation\Translator $translator and use $translator; instead'
+		-
+			function: 'trans_choice()'
+			message: 'dependency inject Illuminate\Contracts\Translation\Translator $translator and use $translator->choice($key, $number, $replace, $locale); instead'
+		-
+			function: '__()'
+			message: 'dependency inject Illuminate\Contracts\Translation\Translator $translator and use $translator->translate($key, $replace, $locale); instead'
+		-
+			function: 'url()'
+			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator; instead'
+		-
+			function: 'validator()'
+			message: 'dependency inject Illuminate\Contracts\Validation\Factory $validationFactory and use $validationFactory; instead'
+		-
+			function: 'view()'
+			message: 'dependency inject Illuminate\Contracts\View\Factory $viewFactory and use $viewFactory; instead'
