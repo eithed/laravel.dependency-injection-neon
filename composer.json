@@ -1,0 +1,28 @@
+{
+	"name": "eithed/laravel.dependency-injection-neon",
+	"type": "phpstan-extension",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Pawel Trauth",
+			"email": "eithed@gmail.com"
+		}
+	],
+	"keywords": [
+		"static analysis"
+	],
+	"extra": {
+		"phpstan": {
+			"includes": [
+				"extension.neon"
+			]
+		}
+	},
+	"require": {
+		"php": "^7.2 || ^8.0",
+		"phpstan/phpstan": "^1.0"
+	},
+	"require-dev": {
+		"spaze/phpstan-disallowed-calls": "^2.11"
+	}
+}
