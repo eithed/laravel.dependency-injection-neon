@@ -2,16 +2,16 @@ parameters:
 	disallowedFunctionCalls:
 		-
 			function: 'abort()'
-			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort(...) instead;'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort($code, $message, $headers); instead'
 		-
 			function: 'abort_if()'
-			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort_if(...) instead;'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort_if($code, $message, $headers); instead'
 		-
 			function: 'abort_unless()'
-			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort_unless(...);'
+			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application->abort_unless($code, $message, $headers); instead'
 		-
 			function: 'action()'
-			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator->url(); instead'
+			message: 'dependency inject Illuminate\Contracts\Routing\UrlGenerator $urlGenerator and use $urlGenerator->url($path, $parameters, $secure); instead'
 		-
 			function: 'app()'
 			message: 'dependency inject Illuminate\Contracts\Foundation\Application $application and use $application; instead'
